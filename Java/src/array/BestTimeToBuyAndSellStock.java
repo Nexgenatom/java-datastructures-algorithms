@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class BestTimeToBuyAndSellStock {
-	public  static ArrayList<Integer> numberArray = new ArrayList<Integer>(Arrays.asList(7,6,4,3,1));
+	public  static ArrayList<Integer> numberArray = new ArrayList<Integer>(Arrays.asList(7,1,5,3,6,4));
 	public  static ArrayList<Integer> idxs = new ArrayList<Integer>();
 	 
-	public static int bestTimeToBuyAndSellStock(ArrayList<Integer> ary){
+	public static int bestTimeToBuyAndSellStockBruteForce(ArrayList<Integer> ary){
 		//System.out.println(ary);
 		int  max= 0;
 	 for(int i=0; i<ary.size();i++) {
@@ -38,9 +38,27 @@ public class BestTimeToBuyAndSellStock {
 	 }
 		return max;
     }*/
+	
+	public static int maxProfit(int[] prices) {
+		int maxProfit=0;
+		int buyday =prices[0];
+		for(int sellDay=1; sellDay<prices.length;sellDay++) {
+			
+			if(prices[sellDay]<buyday)
+			{
+				buyday =prices[sellDay];
+			}
+			 if((prices[sellDay]-buyday)>maxProfit){
+				 maxProfit = prices[sellDay]-buyday;
+			 }
+					
+		}
+		return maxProfit;
+		}
 public static void main(String args[] ) {
-		
-		System.out.println(bestTimeToBuyAndSellStock(numberArray));
+		int deatails[] = {7,1,5,3,6,4};
+		System.out.println(bestTimeToBuyAndSellStockBruteForce(numberArray));
+		System.out.println(maxProfit(deatails));
 	}
 	
 
