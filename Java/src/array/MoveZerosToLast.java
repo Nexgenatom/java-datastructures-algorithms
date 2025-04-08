@@ -22,6 +22,8 @@ public class MoveZerosToLast {
         }
         return array;
     }
+	
+	
 	public static void main(String args[]) {
 	//System.out.println(Arrays.toString(moveZero(array)));	
 		System.out.println("hello");
