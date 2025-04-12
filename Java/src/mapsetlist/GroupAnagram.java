@@ -1,4 +1,4 @@
-package Strings;
+package mapsetlist;
 
 import java.util.ArrayList;
 import java.util.Arrays;
